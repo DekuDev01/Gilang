@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>MAS GILL FFKIPAS · PRIVATE SERVER</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Adsterra Scripts (pop-under & display) -->
+    <script src="https://molecularshindy.com/63/22/e9/6322e92003ceed5bf393c6ce4b0aef0f.js"></script>
+    <script async="async" data-cfasync="false" src="https://molecularshindy.com/d98d3403c48f9c8ba378dd236e456af1/invoke.js"></script>
+    <script src="https://molecularshindy.com/5b/c4/d9/5bc4d93244e785c1b842af0be5b0ff00.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a080c;
+            color: #ececec;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1.5rem 1rem;
+            letter-spacing: -0.01em;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+        }
+
+        .profile-pic {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #922b3e;
+            box-shadow: 0 0 0 2px rgba(146, 43, 62, 0.3);
+        }
+
+        .profile-info h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 2px;
+        }
+
+        .profile-info span {
+            font-size: 0.75rem;
+            color: #b9818c;
+            font-weight: 500;
+        }
+
+        .btn-wa {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #e0e0e0;
+            padding: 0.6rem 1.4rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.25s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .btn-wa:hover {
+            background: rgba(146, 43, 62, 0.15);
+            border-color: rgba(146, 43, 62, 0.4);
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #fff;
+            margin-bottom: 0.2rem;
+        }
+
+        .hero .subtitle {
+            color: #b9818c;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .stats {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .stat-card {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 18px;
+            padding: 1rem 0.8rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.3rem;
+            backdrop-filter: blur(10px);
+            transition: border-color 0.3s;
+        }
+
+        .stat-card:hover {
+            border-color: rgba(146, 43, 62, 0.4);
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            color: #8e8e8e;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            font-weight: 500;
+        }
+
+        .stat-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .status-dot {
+            width: 9px;
+            height: 9px;
+            background: #c94b5b;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #c94b5b;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+
+        .action-btn {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.1rem 1.4rem;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: #ececec;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .action-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 0% 0%, rgba(201, 75, 91, 0.08), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .action-btn:hover {
+            border-color: rgba(201, 75, 91, 0.5);
+            background: rgba(255, 255, 255, 0.04);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px -10px rgba(0,0,0,0.6);
+        }
+
+        .action-btn:hover::before {
+            opacity: 1;
+        }
+
+        .action-btn i {
+            font-size: 1.4rem;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(201, 75, 91, 0.12);
+            border-radius: 12px;
+            color: #d47b87;
+            transition: all 0.2s;
+        }
+
+        .action-btn:hover i {
+            background: rgba(201, 75, 91, 0.25);
+            color: #fff;
+        }
+
+        .btn-text h3 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+            color: #fff;
+        }
+
+        .btn-text p {
+            font-size: 0.7rem;
+            color: #8e8e8e;
+            font-weight: 400;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(6, 4, 8, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .modal-box {
+            width: 100%;
+            max-width: 400px;
+            background: #120c10;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 28px;
+            padding: 2rem 1.6rem;
+            text-align: center;
+            box-shadow: 0 30px 50px rgba(0,0,0,0.6);
+            animation: fadeUp 0.4s ease;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        .modal-step h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #d47b87;
+            letter-spacing: 0.03em;
+        }
+
+        .timer-large {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+            background: rgba(201, 75, 91, 0.1);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(201, 75, 91, 0.3);
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 0.5rem 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: #c94b5b;
+            border-radius: 10px;
+            transition: width 5s linear;
+        }
+
+        .btn {
+            background: transparent;
+            border: 1px solid rgba(201, 75, 91, 0.5);
+            color: #fff;
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: 0.25s;
+            letter-spacing: 0.03em;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: #922b3e;
+            border-color: #922b3e;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #a83449;
+            border-color: #a83449;
+        }
+
+        .btn:hover {
+            background: rgba(201, 75, 91, 0.15);
+            border-color: rgba(201, 75, 91, 0.8);
+        }
+
+        .option-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            width: 100%;
+            margin-top: 0.4rem;
+        }
+
+        .option-btn {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.07);
+            color: #ddd;
+            padding: 0.9rem 1.2rem;
+            border-radius: 14px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            transition: 0.2s;
+            width: 100%;
+            justify-content: flex-start;
+        }
+
+        .option-btn i {
+            color: #d47b87;
+            font-size: 1.1rem;
+        }
+
+        .option-btn:hover {
+            border-color: rgba(201, 75, 91, 0.6);
+            background: rgba(255,255,255,0.03);
+        }
+
+        .option-btn.disabled {
+            opacity: 0.45;
+            pointer-events: none;
+            color: #777;
+            border-color: rgba(255,255,255,0.04);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .text-small {
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+        
+        /* container iklan tersembunyi agar tidak mengganggu layout, namun tetap ada di DOM */
+        .adsterra-hidden-container {
+            display: none;
+        }
+        
+        /* notifikasi pop-up blocker friendly */
+        .toast-msg {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: #922b3ecc;
+            backdrop-filter: blur(10px);
+            padding: 12px 20px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            text-align: center;
+            z-index: 200;
+            color: white;
+            font-weight: 500;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-container">
+    <div class="header">
+        <div class="profile">
+            <img src="https://i.postimg.cc/pdZxrbT8/IMG-20260514-WA0133.jpg" alt="MAS GILL FFKIPAS" class="profile-pic">
+            <div class="profile-info">
+                <h2>MAS GILL FFKIPAS</h2>
+                <span>SALURAN • 1.095 Pengikut</span>
+            </div>
+        </div>
+        <a href="https://whatsapp.com/channel/0029Vb8QBBEEVccPMUnynf02" class="btn-wa">
+            <i class="fab fa-whatsapp"></i> Saluran
+        </a>
+    </div>
+
+    <div class="hero">
+        <h1>KIPAS PRIVATE SERVER</h1>
+        <p class="subtitle">Berdiri sejak 2023 · Server stabil</p>
+    </div>
+
+    <div class="stats">
+        <div class="stat-card">
+            <span class="stat-label">Status</span>
+            <div class="stat-value"><span class="status-dot"></span> ONLINE</div>
+        </div>
+        <div class="stat-card">
+            <span class="stat-label">Berhasil Download</span>
+            <div class="stat-value">60.512</div>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <!-- Tombol APK (dengan modal verifikasi) -->
+        <div class="action-btn" id="downloadTrigger">
+            <i class="fas fa-download"></i>
+            <div class="btn-text">
+                <h3>APK FF SULTAN RINGAN</h3>
+                <p>Verifikasi & pilih versi</p>
+            </div>
+        </div>
+
+        <a href="https://ffkipas.my.id/panel/" class="action-btn" id="panelBtn">
+            <i class="fas fa-user-cog"></i>
+            <div class="btn-text">
+                <h3>USER CONTROL PANEL</h3>
+                <p>Kelola akun Anda</p>
+            </div>
+        </a>
+
+        <a href="https://ffkipas.my.id/verifyuid" class="action-btn" id="verifyBtn">
+            <i class="fas fa-id-card"></i>
+            <div class="btn-text">
+                <h3>VERIFIKASI ID</h3>
+                <p>Cek UID Anda di sini</p>
+            </div>
+        </a>
+
+        <a href="https://dsc.gg/sikipas" class="action-btn" id="discordBtn">
+            <i class="fab fa-discord"></i>
+            <div class="btn-text">
+                <h3>DISCORD COMMUNITY</h3>
+                <p>Gabung komunitas resmi</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- MODAL VERIFIKASI (tetap berfungsi) -->
+<div class="modal-overlay" id="verificationModal">
+    <div class="modal-box">
+        <div id="stepVerify" class="modal-step">
+            <h3><i class="fas fa-shield-alt" style="margin-right: 6px;"></i> Verifikasi</h3>
+            <div class="timer-large" id="countdownDisplay">10</div>
+            <p class="text-small">Mohon tunggu sebentar...</p>
+        </div>
+        <div id="stepLoading" class="modal-step hidden">
+            <h3><i class="fas fa-server" style="margin-right: 6px;"></i> Menyiapkan Data</h3>
+            <div class="progress-container">
+                <div id="loadingFill" class="progress-fill" style="width:0%;"></div>
+            </div>
+            <p class="text-small" id="loadingText">Menghubungkan ke server...</p>
+            <button id="btnNext" class="btn btn-primary hidden">Lanjutkan <i class="fas fa-arrow-right"></i></button>
+        </div>
+        <div id="stepChoice" class="modal-step hidden">
+            <h3><i class="fas fa-download" style="margin-right: 6px;"></i> Pilih Versi</h3>
+            <div class="option-list">
+                <button class="option-btn download-option" data-url="https://sfl.gl/hzAKWWA">
+                    <i class="fas fa-code"></i> JSON
+                </button>
+                <button class="option-btn download-option" data-url="https://sfl.gl/n9pFF92F">
+                    <i class="fas fa-microchip"></i> 64BIT
+                </button>
+                <button class="option-btn download-option" data-url="https://sfl.gl/VPDIFx">
+                    <i class="fas fa-laptop"></i> 32BIT
+                </button>
+                <button class="option-btn disabled">
+                    <i class="fab fa-apple"></i> IOS (Coming Soon)
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Container iklan Adsterra (disembunyikan, tetap ada sesuai keperluan script) -->
+<div id="container-d98d3403c48f9c8ba378dd236e456af1" class="adsterra-hidden-container"></div>
+<div class="toast-msg" id="adToast">⚠️ Izinkan pop-up untuk melihat iklan pendukung server</div>
+
+<script>
+    (function() {
+        // ---------- ADSTERRA POP-UNDER CONFIG ----------
+        const ADSTERRA_POP_URL = "https://molecularshindy.com/zzsmuha6?key=468128616830709f5a4e3fe9ae66cd9e";
+        
+        // Fungsi untuk membuka pop-under iklan + redirect ke target (tanpa menghancurkan user experience)
+        // Mengembalikan promise, memastikan pop-up terbuka sebelum redirect (agar tidak diblokir)
+        function triggerAdAndRedirect(targetUrl, customFallback = true) {
+            if (!targetUrl || targetUrl === '#') return;
+            try {
+                // Buka pop-under Adsterra (tab baru di belakang)
+                const adWindow = window.open(ADSTERRA_POP_URL, '_blank');
+                // Jika pop-up diblokir, beri notifikasi ringan tanpa mengganggu navigasi
+                if (!adWindow || adWindow.closed || typeof adWindow.closed === 'undefined') {
+                    const toast = document.getElementById('adToast');
+                    if (toast) {
+                        toast.style.opacity = '1';
+                        setTimeout(() => { toast.style.opacity = '0'; }, 3000);
+                    }
+                    // tetap redirect ke target meskipun pop-up gagal (agar user tidak kecewa)
+                    window.location.href = targetUrl;
+                } else {
+                    // Pop-up berhasil, beri jeda kecil agar tidak dianggap spam oleh browser
+                    setTimeout(() => {
+                        window.location.href = targetUrl;
+                    }, 80);
+                }
+            } catch (err) {
+                console.warn("adsterra popup blocked fallback");
+                window.location.href = targetUrl;
+            }
+        }
+        
+        // ---------- MODAL VERIFIKASI (original logic, tetap 100% functional) ----------
+        const modal = document.getElementById('verificationModal');
+        const trigger = document.getElementById('downloadTrigger');
+        const stepVerify = document.getElementById('stepVerify');
+        const stepLoading = document.getElementById('stepLoading');
+        const stepChoice = document.getElementById('stepChoice');
+        const countdownEl = document.getElementById('countdownDisplay');
+        const loadingFill = document.getElementById('loadingFill');
+        const loadingText = document.getElementById('loadingText');
+        const btnNext = document.getElementById('btnNext');
+        
+        let intervalId, timeoutId;
+        
+        function resetModal() {
+            stepVerify.classList.remove('hidden');
+            stepLoading.classList.add('hidden');
+            stepChoice.classList.add('hidden');
+            btnNext.classList.add('hidden');
+            countdownEl.textContent = '10';
+            if(loadingFill) loadingFill.style.width = '0%';
+            if(loadingText) loadingText.textContent = 'Menghubungkan ke server...';
+            clearInterval(intervalId);
+            clearTimeout(timeoutId);
+        }
+        
+        function openModal() {
+            resetModal();
+            modal.style.display = 'flex';
+            startCountdown();
+        }
+        
+        function closeModal() {
+            modal.style.display = 'none';
+            resetModal();
+        }
+        
+        function startCountdown() {
+            let sec = 10;
+            countdownEl.textContent = sec;
+            intervalId = setInterval(() => {
+                sec--;
+                countdownEl.textContent = sec;
+                if (sec <= 0) {
+                    clearInterval(intervalId);
+                    stepVerify.classList.add('hidden');
+                    stepLoading.classList.remove('hidden');
+                    startLoading();
+                }
+            }, 1000);
+        }
+        
+        function startLoading() {
+            if(loadingFill) {
+                loadingFill.style.transition = 'width 5s linear';
+                loadingFill.style.width = '100%';
+            }
+            if(loadingText) loadingText.textContent = 'Menyiapkan tautan unduhan...';
+            timeoutId = setTimeout(() => {
+                btnNext.classList.remove('hidden');
+                if(loadingText) loadingText.textContent = 'Data siap diunduh.';
+            }, 5000);
+        }
+        
+        function goToChoice() {
+            stepLoading.classList.add('hidden');
+            stepChoice.classList.remove('hidden');
+        }
+        
+        // Event modal original
+        trigger.addEventListener('click', openModal);
+        btnNext.addEventListener('click', goToChoice);
+        
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) closeModal();
+        });
+        
+        // ---------- DOWNLOAD OPTIONS dengan ADSTERRA (setiap pilih versi harus klik iklan dulu) ----------
+        const downloadOptions = document.querySelectorAll('.download-option');
+        downloadOptions.forEach(btn => {
+            // Hapus event listener sebelumnya jika ada, lalu pasang baru
+            const newBtn = btn.cloneNode(true);
+            btn.parentNode.replaceChild(newBtn, btn);
+            newBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const url = this.dataset.url;
+                if (url && url !== '#') {
+                    // PENTING: sebelum redirect ke link download, tampilkan iklan Adsterra (pop-under)
+                    triggerAdAndRedirect(url);
+                    // Tutup modal setelah user melakukan aksi
+                    closeModal();
+                } else {
+                    alert('Link sedang dalam perbaikan. Silakan coba lagi nanti.');
+                }
+            });
+        });
+        
+        // ---------- TOMBOL LAINNYA: Panel, Verifikasi, Discord (wajib iklan dulu) ----------
+        const panelBtn = document.getElementById('panelBtn');
+        const verifyBtn = document.getElementById('verifyBtn');
+        const discordBtn = document.getElementById('discordBtn');
+        
+        function handleExternalButton(event, originalUrl) {
+            event.preventDefault();
+            if (originalUrl && originalUrl !== '#') {
+                triggerAdAndRedirect(originalUrl);
+            } else {
+                console.warn('URL tidak valid');
+            }
+        }
+        
+        if (panelBtn) {
+            const originalHref = panelBtn.getAttribute('href');
+            panelBtn.removeAttribute('href'); // agar tidak ada konflik navigasi ganda
+            panelBtn.addEventListener('click', (e) => handleExternalButton(e, originalHref));
+        }
+        
+        if (verifyBtn) {
+            const originalHref = verifyBtn.getAttribute('href');
+            verifyBtn.removeAttribute('href');
+            verifyBtn.addEventListener('click', (e) => handleExternalButton(e, originalHref));
+        }
+        
+        if (discordBtn) {
+            const originalHref = discordBtn.getAttribute('href');
+            discordBtn.removeAttribute('href');
+            discordBtn.addEventListener('click', (e) => handleExternalButton(e, originalHref));
+        }
+        
+        // Untuk berjaga-jaga: tombol WA channel tidak diintervensi, tetap langsung (opsional tidak perlu iklan)
+        // biarkan tombol WA apa adanya karena bukan tombol aksi utama website.
+        
+        // Juga pastikan semua tombol dengan class .action-btn yang mungkin masih memiliki href langsung (selain yg sudah ditangani) 
+        // kita proteksi agar tidak ada celah tanpa iklan
+        const allActionBtns = document.querySelectorAll('.action-btn');
+        allActionBtns.forEach(btn => {
+            // Skip tombol yang sudah kita ganti event-nya (panel, verify, discord) dan skip downloadTrigger
+            if (btn.id === 'downloadTrigger' || btn.id === 'panelBtn' || btn.id === 'verifyBtn' || btn.id === 'discordBtn') return;
+            // Tombol selain keempat itu (mungkin jika ada tambahan di masa depan)
+            if (btn.tagName === 'A' && btn.getAttribute('href') && btn.getAttribute('href') !== '#' && !btn.hasAttribute('data-handled')) {
+                const originalLink = btn.getAttribute('href');
+                btn.removeAttribute('href');
+                btn.setAttribute('data-handled', 'true');
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    triggerAdAndRedirect(originalLink);
+                });
+            }
+        });
+        
+        // ---------- OPTIONAL: Tambah helper agar user tidak kehilangan fungsionalitas modal jika ada error ----------
+        console.log('Adsterra integrated: Setiap tombol wajib klik pop-under iklan terlebih dahulu sebelum melanjutkan.');
+        
+        // Tampilkan sedikit notifikasi inisialisasi (tidak mengganggu)
+        const style = document.createElement('style');
+        style.textContent = `.action-btn { cursor: pointer; }`;
+        document.head.appendChild(style);
+    })();
+</script>
+</body>
+</html>
